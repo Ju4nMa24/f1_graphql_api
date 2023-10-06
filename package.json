@@ -1,5 +1,5 @@
 {
-  "name": "f1_graphql",
+  "name": "f1_graphql_api",
   "version": "1.0.0",
   "description": "GraphQL API F1 since REST API through RestDataSource.",
   "main": "build/server.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ju4nMa24/f1_graphql.git"
+    "url": "git+https://github.com/Ju4nMa24/f1_graphql_api.git"
   },
   "keywords": [],
   "author": "Juan Manuel Celis <juanm.celisr@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Ju4nMa24/f1_graphql/issues"
+    "url": "https://github.com/Ju4nMa24/f1_graphql_api/issues"
   },
-  "homepage": "https://github.com/Ju4nMa24/f1_graphql#readme",
+  "homepage": "https://github.com/Ju4nMa24/f1_graphql_api#readme",
   "dependencies": {
     "@apollo/datasource-rest": "^6.2.1",
     "apollo-server": "^3.12.1",
