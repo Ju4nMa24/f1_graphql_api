@@ -1,0 +1,78 @@
+"necessary queries for F1 API."
+type Query {
+    "Season list."
+    seasonsList: [Season!]!
+    "Races by Year type list."
+    racesByYear(year: String!): [Race!]!
+    "Race Search."
+    raceSelect(year: String!, round: Int!): Race
+    "Drivers List."
+    driversList(limit: Int, page: Int): [Driver!]!
+    "Info by Driver."
+    infoDrivers(year: String, career: Int, pilot: String): [Driver!]!
+    "pilots clasifications."
+    SeasonPilotRanking(year: String!): [DriverStanding!]!
+    "Circuit Pilots."
+    historyCircuits(limit: Int, page: Int): [Circuit!]!
+    "Circuit Search."
+    circuitSelect(id: String!): Circuit
+}
+"Season entity."
+type Season {
+    year: String!
+    url: String!
+    urlMobile: String!
+}
+"Race entity."
+type Race{
+    season: String!
+    round: String!
+    url: String!
+    urlMobile: String!
+    name: String
+    circuit: Circuit!
+    date: String!
+    time: String!
+}
+"Circuit entity."
+type Circuit { 
+    id: String!
+    url: String!
+    urlMobile: String!
+    name: String!
+    location: Location!
+}
+"Location entity."
+type Location{
+    lat: String!
+    lng: String!
+    locality: String!
+    country: String!
+}
+"Driver entity."
+type Driver{
+    driverId: String!
+    url: String!
+    givenName: String!
+    familyName: String!
+    dateOfBirth: String!
+    nationality: String!
+    code: String
+    permanentNumber: String
+    urlMobile: String!
+}
+type DriverStanding{
+    position: String!
+    positionText: String!
+    points: String!
+    wins: String!
+    driver: Driver!
+    constructors: [Constructor!]!
+}
+type Constructor{
+    constructorId: String!
+    url: String!
+    urlMobile: String!
+    name: String!
+    nationality: String!
+}
